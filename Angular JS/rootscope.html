@@ -1,0 +1,34 @@
+<html ng-app="myApp">
+	<head>
+		<title>{{company}}</title>
+	</head>
+	<body>
+		<div ng-controller="MyController">
+			{{company}} - {{name}}
+		</div>
+	</body>
+	<script src="../scripts/angular.js"></script>
+	<script>
+		var app = angular.module('myApp',[]);
+		
+		/*Executes when app is getting Initialized*/
+		app.run(function($rootScope){
+			$rootScope.company = "KLFS Services"
+		});
+		
+		app.controller('MyController',['$scope','$rootScope',function($scope,$rootScope){
+			$scope.name = "Kishori";
+			console.log($rootScope);
+			console.log($scope);
+			console.log($scope.$parent.company);
+			console.log($rootScope.company);
+			
+			
+		}]);
+		
+		
+	</script>
+	
+</html>
+
+<!-- Usage of $rootScope it is a parent scope, all the scopes derived from this scope--> 

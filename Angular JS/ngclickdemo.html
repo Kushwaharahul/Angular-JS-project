@@ -1,0 +1,31 @@
+<html ng-app="myApp">
+	<head>
+		<title>Angular</title>
+	</head>
+	<body>
+		<div ng-controller="MyController">
+			<h1>{{names[2]}}</h1>
+			<input type="text" ng-model="name"/> : {{name}}
+			<hr/>
+			<input type="button" value="ChangeName" ng-click="changeName()"/>
+		</div>
+		
+	</body>
+	<script src="scripts/angular.js"></script>
+	<script>
+		var app = angular.module('myApp',[]);
+		
+		app.controller('MyController',['$scope',function($scope){
+			$scope.names = ["Ashwini","Deepali","Sangeeta"];
+			$scope.name = $scope.names[1];
+			$scope.changeName = function(){
+			    $scope.name = $scope.names[0];
+			}
+			
+		}]);
+	
+		
+	</script>
+	
+</html>
+

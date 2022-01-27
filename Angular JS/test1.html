@@ -1,0 +1,25 @@
+<html ng-app>
+<head>
+<script src="scripts/angular.js" ></script>
+<script>
+function myCtrl($scope){
+  $scope.companyname="KLFS service";
+  }
+
+function myCtrl1($scope){
+  $scope.companyname1="ROJROCKS service";
+}
+</script>
+
+</head>
+<body  ng-controller="myCtrl">
+<h1> Expression :{{3*3}} </h1>
+{{companyname}}
+<div   ng-controller="myCtrl1">
+  {{companyname1}}
+</div>
+
+
+
+</body>
+</html>
